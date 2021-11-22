@@ -15,18 +15,42 @@ const hbs = require("hbs");
 
 const app = express();
 
+// use session here:
+// require('./config/session.config')(app);
+
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
 
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+const DB_URL = process.env.MONGODB_URI;
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    // for how long is the user logged in -> this would be one day
+    cookie: { maxAge: 1000 * 60 * 60 * 24 },
+    resave: true,
+    saveUninitialized: false,
+    store: MongoStore.create({
+      mongoUrl: DB_URL,
+    }),
+  })
+);
+
 // default value for title local
-const projectName = "test";
+const projectName = "Neighbor";
 const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowerCase();
 
-app.locals.title = `${capitalized(projectName)} created with IronLauncher`;
+app.locals.title = `${capitalized(projectName)} homepage`;
 
 // 👇 Start handling routes here
 const index = require("./routes/index");
 app.use("/", index);
+
+// authRouter
+const authRouter = require('./routes/auth.routes');
+app.use('/', authRouter);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

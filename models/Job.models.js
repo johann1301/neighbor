@@ -1,11 +1,34 @@
 const { Schema, model } = require("mongoose");
 
+// MODELS
+// Create the `Category` model:
+
+const Category = mongoose.model('Category', new mongoose.Schema({
+    Job: String,
+  }));
+  
+  // Create the `Purchase` model:
+  
+  const Purchase = mongoose.model('Purchase', new mongoose.Schema({
+    user: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'User'
+    },
+    album: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: 'Album'
+    }
+  }));
+
+
 // TODO: Please make sure you edit the user model to whatever makes sense in this case
 const userSchema = new Schema(
   {
-    username: {
+    filter: {
       type: String,
-      trim: true,
+      category: {
+
+      },
       required: [true, "Username is required."],
       unique: true
     },
