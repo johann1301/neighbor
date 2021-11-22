@@ -1,10 +1,13 @@
 {{#with ad}}
 	<h1>{{title}}</h1>
+    <p>Category: {{category}}</p>
 	<p>Time: {{time}}h</p>
     <p>Date: {{date}}</p>
-    <p>Address: {{address}}</p>
+    <h5>Address:</h5>
+    <p>{{address.street}} {{address.number}}</p>
+    <p>{{address.zipcode}} {{address.city}}</p>
 	<p>Description: {{description}}</p>
 	<p>Price: {{price}}</p>
-	<a href="/ads/edit/{{_id}}">Edit this ad ✏️</a>
-	<a href="/ads/delete/{{_id}}">Delete this ad ❌</a>
+	<a href="/ads/edit/{{_id}}">Edit this ad</a>
+	<a href="/ads/delete/{{_id}}">Delete this ad</a>
 {{/with}}

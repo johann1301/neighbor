@@ -4,8 +4,13 @@ const adSchema = new Schema({
 	title: String,
 	category: String,
 	time: Number,
-	date: Date,
-	address: String,
+	date: String,
+	address: {
+		street: String,
+		number: Number,
+		zipcode: Number,
+		city: String,
+	},
 	description: String,
 	price: Number
 }, {

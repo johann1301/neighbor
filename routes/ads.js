@@ -22,16 +22,20 @@ router.get('/ads/add', (req, res, next) => {
 
 router.post('/ads', (req, res, next) => {
 	
-	const { title, category, time, date, address, description, price } = req.body
+	const { title, category, time, date, street, number, zipcode, city, description, price } = req.body
 	
-    console.log(req.body)
-	
+
 	Ad.create({
 	  title: title,
 	  category: category,
 	  time: time,
 	  date: date,
-	  address: address,
+	  address: {
+          street: street,
+          number: number,
+          zipcode: zipcode,
+          city: city,
+      },
 	  description: description,
 	  price: price
 	})
