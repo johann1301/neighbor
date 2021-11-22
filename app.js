@@ -15,8 +15,28 @@ const hbs = require("hbs");
 
 const app = express();
 
+// use session here:
+// require('./config/session.config')(app);
+
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
+
+const session = require('express-session');
+const MongoStore = require('connect-mongo');
+const DB_URL = process.env.MONGODB_URI;
+
+app.use(
+  session({
+    secret: process.env.SESSION_SECRET,
+    // for how long is the user logged in -> this would be one day
+    cookie: { maxAge: 1000 * 60 * 60 * 24 },
+    resave: true,
+    saveUninitialized: false,
+    store: MongoStore.create({
+      mongoUrl: DB_URL,
+    }),
+  })
+);
 
 // default value for title local
 const projectName = "Neighbor";
