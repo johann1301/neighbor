@@ -71,13 +71,18 @@ router.get('/ads/edit/:id', (req, res, next) => {
 router.post('/ads/edit/:id', (req, res, next) => {
 	const id = req.params.id
 	
-	const { title, category, time, date, address, description, price } = req.body
+	const { title, category, time, date, street, number, zipcode, city, description, price } = req.body
 	Ad.findByIdAndUpdate(id, {
 	  title,
 	  category,
 	  time,
 	  date,
-	  address,
+	  address: {
+        street: street,
+        number: number,
+        zipcode: zipcode,
+        city: city,
+    },
 	  description,
 	  price,
 	}, { new: true })
