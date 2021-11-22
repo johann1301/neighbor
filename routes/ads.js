@@ -76,7 +76,7 @@ router.post('/ads/edit/:id', (req, res, next) => {
 	  title,
 	  category,
 	  time,
-	  date,
+	  date, 
 	  address: {
         street: street,
         number: number,
