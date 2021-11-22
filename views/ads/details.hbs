@@ -1,0 +1,10 @@
+{{#with ad}}
+	<h1>{{title}}</h1>
+	<p>Time: {{time}}h</p>
+    <p>Date: {{date}}</p>
+    <p>Address: {{address}}</p>
+	<p>Description: {{description}}</p>
+	<p>Price: {{price}}</p>
+	<a href="/ads/edit/{{_id}}">Edit this ad ✏️</a>
+	<a href="/ads/delete/{{_id}}">Delete this ad ❌</a>
+{{/with}}
