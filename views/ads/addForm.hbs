@@ -1,0 +1,45 @@
+<h1>Create a new ad</h1>
+<form action="/ads" method="POST">
+
+	<label for="title">Title: </label>
+	<input type="text" name="title" id="title">
+
+    <select name="category">
+		
+            <option value="">-Category-</option>
+			<option value="household">Household</option>
+            <option value="garden">Garden</option>
+            <option value="pets">Pets</option>
+            <option value="education">Education</option>
+            <option value="craft">Craft</option>
+            <option value="voluntary">Voluntary</option>
+            <option value="other">Other</option>
+		
+	</select>
+
+    <label for="time">Time: </label>
+	<input type="number" name="time" id="time">
+
+	<label for="date">Date: </label>
+	<input type="date" name="date" id="date">
+
+    <label for="street">Street: </label>
+	<input type="text" name="street" id="street">
+
+    <label for="number">Number: </label>
+	<input type="number" name="number" id="number">
+
+    <label for="zipcode">Zipcode: </label>
+	<input type="number" name="zipcode" id="zipcode">
+
+    <label for="city">City: </label>
+	<input type="text" name="city" id="city">
+
+	<label for="description">Description: </label>
+	<input type="text" name="description" id="description">
+
+	<label for="price">Price: </label>
+	<input type="number" name="price" id="price">
+
+	<button type="submit">Create this ad</button>
+</form>

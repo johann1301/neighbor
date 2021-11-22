@@ -48,9 +48,14 @@ app.locals.title = `${capitalized(projectName)} homepage`;
 const index = require("./routes/index");
 app.use("/", index);
 
+
+const ads = require("./routes/ads");
+app.use("/", ads);
+
 // authRouter
 const authRouter = require('./routes/auth.routes');
 app.use('/', authRouter);
+
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
