@@ -49,6 +49,7 @@ app.locals.title = `${capitalized(projectName)} homepage`;
 // app.use("/", index);
 
 
+// adsRouter
 const ads = require("./routes/ads");
 app.use("/", ads);
 
