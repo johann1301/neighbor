@@ -53,6 +53,10 @@ app.locals.title = `${capitalized(projectName)} homepage`;
 const ads = require("./routes/ads");
 app.use("/", ads);
 
+// userRouter
+const user = require('./routes/user');
+app.use('/', user);
+
 // authRouter
 const authRouter = require('./routes/auth.routes');
 app.use('/', authRouter);

@@ -22,6 +22,12 @@ const userSchema = new Schema(
       type: String,
       required: [true, "Password is required."]
     },
+    address: {
+      street: String,
+		  number: Number,
+		  zipcode: Number,
+		  city: String,
+    }
   
   },
   {

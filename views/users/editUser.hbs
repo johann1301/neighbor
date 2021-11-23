@@ -1,0 +1,23 @@
+{{#with user}}
+<h1>Hello {{username}}</h1>
+
+<form action="/userProfile/edit" method="POST">
+
+	
+
+    <label for="street">Street: </label>
+	<input type="text" name="street" id="street" value="{{address.street}}">
+
+    <label for="number">Number: </label>
+	<input type="number" name="number" id="number" value="{{address.number}}">
+
+    <label for="zipcode">Zipcode: </label>
+	<input type="number" name="zipcode" id="zipcode" value="{{address.zipcode}}">
+
+    <label for="city">City: </label>
+	<input type="text" name="city" id="city" value="{{address.city}}">
+
+	
+	<button type="submit">Edit my Profile</button>
+</form>
+{{/with}}
