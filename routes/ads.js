@@ -4,12 +4,12 @@ const Ad = require('../models/Ad')
 
 // List all ads
 
-router.get('/ads', (req, res, next) => {
+router.get('/', (req, res, next) => {
 		
 	Ad.find()
 		.then(adsFromDB => {
 			
-			res.render('ads/index', { adList: adsFromDB })
+			res.render('home', { adList: adsFromDB })
 		})
 		.catch(err => next(err))
 });

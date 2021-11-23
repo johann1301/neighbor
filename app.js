@@ -49,6 +49,7 @@ const index = require("./routes/index");
 app.use("/", index);
 
 
+// adsRouter
 const ads = require("./routes/ads");
 app.use("/", ads);
 

@@ -18,7 +18,12 @@ const loginCheck = () => {
   }
 }
 
-router.get('/userProfile', loginCheck(), (req, res) => res.render('users/user-profile'));
+router.get('/userProfile', loginCheck(), (req, res) => {
+  const user = req.session.user;
+        
+          res.render('users/user-profile', { user });
+
+})
 
 // GET login route
  
@@ -94,7 +99,8 @@ if (!regex.test(password)) {
     })
     .then(userFromDB => {
     //   console.log('New created user is: ', userFromDB);
-    res.redirect('/userProfile');
+    
+    res.redirect('/login');
     })
     .catch(error => {
       if (error instanceof mongoose.Error.ValidationError) {
