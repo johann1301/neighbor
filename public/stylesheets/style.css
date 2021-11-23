@@ -1,13 +1,55 @@
 body {
-  padding: 50px;
-  font: 16px "Helvetica", Helvetica, Arial, sans-serif;
+  font-family: 'Lato', sans-serif;
+  margin: 0px;
 }
 
-a {
-  color: #5F0A87;
+#logo-link {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 30px;
+}
+
+a{
+  text-decoration: none !important;
+  color: white;
+}
+
+#logo{
+  vertical-align: middle;
+  height: 30px;
+
+}
+
+header{
+  margin: 0px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background-color: #623FFD;
+
+}
+
+#create-button{
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 10px;
+  background-color: #623FFD;
+  font-size: 16px;
+  display: block; 
+  margin: 0 auto;
+}
+
+.create-btn-font{
+  color: white;
+
 }
 
 h1 {
-  color: 24px;
+  padding-top: 40px;
+  font-size: 40px;
+  text-align: center;
 }
 
