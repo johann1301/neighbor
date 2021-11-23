@@ -1,13 +1,18 @@
 body {
   padding: 50px;
-  font: 16px "Helvetica", Helvetica, Arial, sans-serif;
+  font: 1em "Helvetica", Helvetica, Arial, sans-serif;
 }
 
-a {
-  color: #5F0A87;
+.img-rounded {
+
 }
 
-h1 {
-  color: 24px;
+.form {
+  display:block;
+  border-radius: 50px;
+  width: 500px;
+  height: 50px;
+  font-size: 1.5em;
 }
+
 
