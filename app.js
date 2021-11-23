@@ -45,12 +45,17 @@ const capitalized = (string) => string[0].toUpperCase() + string.slice(1).toLowe
 app.locals.title = `${capitalized(projectName)} homepage`;
 
 // 👇 Start handling routes here
-const index = require("./routes/index");
-app.use("/", index);
+// const index = require("./routes/index");
+// app.use("/", index);
 
 
+// adsRouter
 const ads = require("./routes/ads");
 app.use("/", ads);
+
+// userRouter
+const user = require('./routes/user');
+app.use('/', user);
 
 // authRouter
 const authRouter = require('./routes/auth.routes');

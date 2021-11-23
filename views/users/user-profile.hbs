@@ -1,11 +1,11 @@
-<h2>Your profile</h2>
 
-{{#if user}}
-  <h2>Welcome, {{ user.username }}!</h2>
+
+{{#with user}}
+  <h2>Welcome, {{ username }}!</h2>
   <p>Profile page</p>
   <button>
-    <a href="/userProfile">Reload the page</a>
+    <a href="/userProfile/edit">Edit Profile</a>
   </button>
-{{else}}
-  <p>Still no logged in user, sorry!</p>
-{{/if}}
+<h1>{{address.street}}</h1>
+  
+{{/with}}

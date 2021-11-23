@@ -5,7 +5,25 @@ const User = require('../models/User.model');
 const bcryptjs = require('bcryptjs');
 const saltRounds = 10;
 
-router.get('/userProfile', (req, res) => res.render('users/user-profile'));
+
+// middleware to protect a route
+const loginCheck = () => {
+  return (req, res, next) => {
+    // check for a logged in user
+    if (req.session.user) {
+      next()
+    } else {
+      res.redirect('/login')
+    }
+  }
+}
+
+router.get('/userProfile', loginCheck(), (req, res) => {
+  const user = req.session.user;
+        console.log (user)
+          res.render('users/user-profile', { user });
+
+})
 
 // GET login route
  
@@ -15,10 +33,12 @@ router.get('/login', (req, res) => res.render('auth/login'));
 // GET route ==> to display the signup form to users
 router.get('/signup', (req, res) => res.render('auth/signup'));
 
+
+
 // POST login route
 
 // POST login route ==> to process form data
-router.post('/login', (req, res, next) => {
+router.post('/userProfile', (req, res, next) => {
     const { email, password } = req.body;
    
     if (email === '' || password === '') {
@@ -35,6 +55,7 @@ router.post('/login', (req, res, next) => {
           return;
         } else if (bcryptjs.compareSync(password, user.passwordHash)) {
             req.session.user = user;
+          
           res.render('users/user-profile', { user });
         } else {
           res.render('auth/login', { errorMessage: 'Incorrect password.' });
@@ -78,7 +99,8 @@ if (!regex.test(password)) {
     })
     .then(userFromDB => {
     //   console.log('New created user is: ', userFromDB);
-    res.redirect('/userProfile');
+    
+    res.redirect('/login');
     })
     .catch(error => {
       if (error instanceof mongoose.Error.ValidationError) {

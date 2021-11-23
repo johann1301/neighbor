@@ -1,0 +1,58 @@
+
+
+
+
+<h2 class="title-home">Do you need help at home or do you want to help your neighbors?</h2>
+
+<div class="filters">
+  <h3>Filters: </h3>
+  <button class="filter-option" data-filter="household" onclick=filterCategory(event)>Household</button>
+  <button class="filter-option" data-filter="garden" onclick=filterCategory(event)>Garden</button>
+  <button class="filter-option" data-filter="pets" onclick=filterCategory(event)>Pets</button>
+  <button class="filter-option" data-filter="education" onclick=filterCategory(event)>Education</button>
+  <button class="filter-option" data-filter="craft" onclick=filterCategory(event)>Craft</button>
+  <button class="filter-option" data-filter="voluntary" onclick=filterCategory(event)>Voluntary</button>
+  <button class="filter-option" data-filter="*" onclick=filterCategory(event)>All</button>
+</div>
+
+<div class="search-container">
+        <select class="radius" name="radius" id="radius">
+            <option value="5km">5km</option>
+            <option value="10km">10km</option>
+            <option value="15km">15km</option>
+            <option value="20km">20km</option>
+        </select>
+    <form action="/ads">
+      <input class="search-form" type="text" placeholder="City / Zipcode / Address" name="search">
+      <button class="submit-btn" type="submit">Search</button>
+    </form>
+  </div>
+
+<h1>All the ads</h1>
+
+    <table class="ad">
+  <tr>
+    <th></th>
+    <th>Title</th>
+    <th>Time</th>
+    <th>Zipcode</th>
+    <th>Price</th>
+    <th>Details</th>
+  </tr>
+  {{#each  adList}}
+	<a href="/ads/{{_id}}">
+  <tr>
+    <td><img class ='ad-img' src='images/logo.png'></td>
+    <td>{{title}}</td>
+    <td>{{time}}</td>
+    <td>{{zipcode}}</td>
+    <td>{{price}}</td>
+  </tr>
+</a>
+
+{{/each}}
+</table>
+
+
+
+

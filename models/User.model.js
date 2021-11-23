@@ -21,7 +21,14 @@ const userSchema = new Schema(
     passwordHash: {
       type: String,
       required: [true, "Password is required."]
+    },
+    address: {
+      street: String,
+		  number: Number,
+		  zipcode: Number,
+		  city: String,
     }
+  
   },
   {
     // this second object adds extra properties: `createdAt` and `updatedAt`
