@@ -20,7 +20,7 @@ const loginCheck = () => {
 
 router.get('/userProfile', loginCheck(), (req, res) => {
   const user = req.session.user;
-        
+        console.log (user)
           res.render('users/user-profile', { user });
 
 })
