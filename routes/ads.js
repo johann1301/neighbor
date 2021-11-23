@@ -12,7 +12,7 @@ router.get('/', (req, res, next) => {
 			res.render('home', { adList: adsFromDB })
 		})
 		.catch(err => next(err))
-});
+}); 
 
 // Create new Ad
 
