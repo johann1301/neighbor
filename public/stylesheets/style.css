@@ -1,6 +1,6 @@
-/* *{
+ /* *{
   border: 1px solid black;
-} */
+}  */
 
 body {
   font-family: 'Lato', sans-serif;
@@ -8,27 +8,33 @@ body {
 }
 
 #logo-link {
-  margin-left: 20px;
   color: white;
   text-decoration: none;
   font-weight: 700;
   font-size: 30px;
 }
 
-#logo-div{
+/* #logo-div{
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: left;
   
-}
+} */
 
 a{
   text-decoration: none !important;
+  color: black; 
+
+}
+
+a:hover{
+  text-decoration: none !important;
   color: black;
+
 }
 
 #logo{
-  vertical-align: middle;
+  /* vertical-align: middle; */
   height: 30px;
 
 }
@@ -37,8 +43,10 @@ header{
   margin: 0px;
   padding-top: 15px;
   padding-bottom: 15px;
-  background-color: #623FFD;
+  background-color: #623FFD; 
 }
+
+
 
 #create-button{
   text-align: center;
@@ -50,13 +58,16 @@ header{
   font-size: 16px;
   display: block; 
   margin: 0 auto;
+  margin-bottom: auto;
+  color: white !important;
 
 }
 
-.create-btn-font{
+ #create-btn-font{
   color: white;
+  font-weight: 700;
 
-}
+} 
 
 h1 {
   padding-top: 40px;
@@ -72,6 +83,9 @@ h1 {
   font-size: 35px;
   font-weight: 1000;
   padding: 15px;
+  padding-top: 20px;
+  margin-top: 60px;
+  margin-bottom: 60px;
 }
 
 .filters{
@@ -139,6 +153,7 @@ h3{
   background-color: white;
   font-size: 16px;
   color: black;
+  margin-bottom: 20px;
 }
 
 .radius{
@@ -148,6 +163,7 @@ h3{
   border-radius: 15px;
   padding: 10px;
   margin-right: 10px;
+  margin-bottom: auto;
   width: 80px;
   text-align: center;
   background-color: white;
@@ -168,35 +184,73 @@ h3{
   color: black;
 }
 
-.ad{
+/* .ad{
   
   align-items: center;
   justify-content: space-around;
-  border: 1px solid black;
+  
   margin: 0 auto;
   border-collapse: separate;
   border-spacing: 0 20px;
+  width: 80%;
+  border: 1px solid black; 
 
-}
-table, td {
+
+} */
+/* table, td {
   padding: 5px;
+  
 }
 
 th{
   padding-bottom: 20px;
 }
-table {
-  width: 80%;
-  text-align: center;
-}
 
-tr{
+
+ tr{
   border: solid 1px black;
-}
-
+} 
+*/
 .ad-img {
-width: 50px;
+width: 20px;
+} 
 
+
+.test{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid rgb(179, 178, 178);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 15px;
 }
 
+.details-btn{
+  margin-bottom: 15px;
+  border-radius: 15px;
+  border: 1px solid #623FFD;
+  background-color: rgb(235, 235, 235);
+  color: black;
+  padding: 10px;
+}
 
+.details-btn:hover{
+  margin-bottom: 15px;
+  border-radius: 15px;
+  border: 1px solid #623FFD;
+  background-color: #e9e4fd;
+  color: black;
+  padding: 10px;
+}
+
+.bold{
+  font-weight: 1000;
+}
+
+.details{
+  margin: 0 auto;
+}

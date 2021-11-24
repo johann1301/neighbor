@@ -28,31 +28,15 @@
     </form>
   </div>
 
-<h1>All the ads</h1>
-
-    <table class="ad">
-  <tr>
-    <th></th>
-    <th>Title</th>
-    <th>Time</th>
-    <th>Zipcode</th>
-    <th>Price</th>
-    <th>Details</th>
-  </tr>
-  {{#each  adList}}
-	<a href="/ads/{{_id}}">
-  <tr>
-    <td><img class ='ad-img' src='images/logo.png'></td>
-    <td>{{title}}</td>
-    <td>{{time}}</td>
-    <td>{{zipcode}}</td>
-    <td>{{price}}</td>
-  </tr>
+{{#each  adList}}
+<a href="/ads/{{_id}}">
+<div class="test">
+  <img class ='ad-img' src='images/hammer.png'>
+  <p class="bold">{{title}}</p>
+  <p>Time: {{time}}h</p>
+  <p class="bold">Zipcode: {{address.zipcode}}</p>
+  <p class="bold">Price: {{price}}</p>
+  <button class="details-btn">Details</button>
+</div>
 </a>
-
 {{/each}}
-</table>
-
-
-
-
