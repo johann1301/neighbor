@@ -101,7 +101,7 @@ router.get('/ads/delete/:id', (req, res, next) => {
 	const id = req.params.id
 	Ad.findByIdAndDelete(id)
 		.then(() => {
-			res.redirect('/ads')
+			res.redirect('/userProfile')
 		})
 		.catch(err => {
 			next(err)

@@ -1,18 +1,31 @@
+<div class = 'flexbox'>
+
+  <div class = "profil">
+    {{#with user}}
+      <img class = "profileImg" src={{imgPath}} alt="Profile Picture" height="100px">
+      <h4 class="bold">{{ username }}</h4>
+      <p>{{email}}</p>
+      <p>{{address.street}} {{address.number}}</p>
+      <p>{{address.zipcode}} {{address.city}}</p>
+      <button class="details-btn">
+        <a href="/userProfile/edit">Edit Profile</a>
+      </button>
+    {{/with}}
+  </div>
 
 
-{{#with user}}
-  <img src={{imgPath}} alt="Profile Picture" height="100px">
-  <h5>{{ username }}</h5>
-  <p>{{email}}</p>
-  <p>{{address.street}} {{address.number}}</p>
-  <p>{{address.zipcode}} {{address.city}}</p>
-  <button>
-    <a href="/userProfile/edit">Edit Profile</a>
-  </button>
-
-  
-{{/with}}
-
-{{#each ad}}
-<a href="/ads/{{_id}}">{{title}}</a>
-{{/each}}
+  <div class = "adsspace">
+    {{#each  ad}}
+      <a href="/ads/{{_id}}">
+      <div class="testUser">
+      <img class ='ad-img' src='/public/images/hammer.png'>
+      <p class="bold">{{title}}</p>
+      <p>Time: {{time}}h</p>
+      <p class="bold">Zipcode: {{address.zipcode}}</p>
+      <p class="bold">Price: {{price}}€</p>
+      <button class="details-btn">Details</button>
+      </div>
+      </a>
+    {{/each}}
+  </div>
+</div>
