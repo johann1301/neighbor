@@ -18,11 +18,12 @@ const loginCheck = () => {
   
   router.get('/userProfile/edit', loginCheck(), (req, res) => {
     const user = req.session.user;
-    console.log(user)
             res.render('users/editUser', { user });
             
   
   });
+
+  
 
   router.post('/userProfile/edit', uploader.single("profileImg"), (req, res, next) => {
 	const user = req.session.user;
@@ -52,9 +53,14 @@ const loginCheck = () => {
       
 
       req.session.user = updatedUser
+
+      if(updatedUser.publicId !== user.publicId){
+        cloudinary.uploader.destroy(user.publicId)
+      }
                 
 			res.redirect("/userProfile")
 		})
+    
 		.catch(err => next(err))
 });
 
