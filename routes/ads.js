@@ -21,7 +21,7 @@ router.get('/ads/add', (req, res, next) => {
 });
 
 router.post('/ads', (req, res, next) => {
-	
+	 
 	const { title, category, time, date, street, number, zipcode, city, description, price } = req.body
 	
 
@@ -37,7 +37,8 @@ router.post('/ads', (req, res, next) => {
           city: city,
       },
 	  description: description,
-	  price: price
+	  price: price,
+	  owner: req.session.user._id,
 	})
 		.then(createdAd => {
 			
