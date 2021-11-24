@@ -27,7 +27,10 @@ const userSchema = new Schema(
 		  number: Number,
 		  zipcode: Number,
 		  city: String,
-    }
+    },
+    imgPath: String,
+    imgName: String,
+    publicId: String,
   
   },
   {

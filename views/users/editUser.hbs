@@ -1,9 +1,14 @@
 {{#with user}}
 <h1>Hello {{username}}</h1>
 
-<form action="/userProfile/edit" method="POST">
+<form action="/userProfile/edit" method="POST" enctype='multipart/form-data'>
 
-	
+    <img src={{imgPath}} alt="Profile Picture" height="100px">
+
+    <br>
+
+	<label for="profileImg">Profile image: </label>
+	<input type="file" name="profileImg" id="profileImg">
 
     <label for="street">Street: </label>
 	<input type="text" name="street" id="street" value="{{address.street}}">
