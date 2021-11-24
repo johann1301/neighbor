@@ -31,10 +31,10 @@
 {{#each  adList}}
 <a href="/ads/{{_id}}">
 <div class="test">
-  <img class ='ad-img' src='/public/images/hammer.png'>
+  <img class ='ad-img' src='images/hammer.png'>
   <p class="bold">{{title}}</p>
   <p>Time: {{time}}h</p>
-  <p class="bold">Zipcode: {{zipcode}}</p>
+  <p class="bold">Zipcode: {{address.zipcode}}</p>
   <p class="bold">Price: {{price}}</p>
   <button class="details-btn">Details</button>
 </div>

@@ -43,8 +43,10 @@ header{
   margin: 0px;
   padding-top: 15px;
   padding-bottom: 15px;
-  background-color: #623FFD;
+  background-color: #623FFD; 
 }
+
+
 
 #create-button{
   text-align: center;
@@ -249,6 +251,10 @@ width: 20px;
   font-weight: 1000;
 }
 
+.details{
+  margin: 0 auto;
+}
+
 /* userProfile Page */
 .flexbox{
   display: flex;
@@ -285,4 +291,5 @@ width: 20px;
 
 .profileImg{
   border-radius: 200px;
+
 }
