@@ -248,3 +248,41 @@ width: 20px;
 .bold{
   font-weight: 1000;
 }
+
+/* userProfile Page */
+.flexbox{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.adsspace{
+  width: 100%;
+}
+
+.testUser{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  /* width: 80%; */
+  margin: 20px;
+  border: 1px solid rgb(179, 178, 178);
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-top: 15px;
+}
+
+.profil{
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.profileImg{
+  border-radius: 200px;
+}

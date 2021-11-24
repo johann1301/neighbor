@@ -23,7 +23,6 @@ const loginCheck = () => {
 router.get('/userProfile', loginCheck(), (req, res) => {
   Ad.find({owner: req.session.user._id })
   .then(adFromDB => {
-    console.log(adFromDB)
     res.render('users/user-profile', { ad: adFromDB, user: req.session.user })
 
   })
