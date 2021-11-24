@@ -1,11 +1,14 @@
 
 
 {{#with user}}
-  <h2>Welcome, {{ username }}!</h2>
-  <p>Profile page</p>
+  <img src={{imgPath}} alt="Profile Picture" height="100px">
+  <h5>{{ username }}</h5>
+  <p>{{email}}</p>
+  <p>{{address.street}} {{address.number}}</p>
+  <p>{{address.zipcode}} {{address.city}}</p>
   <button>
     <a href="/userProfile/edit">Edit Profile</a>
   </button>
-<h1>{{address.street}}</h1>
+
   
 {{/with}}
