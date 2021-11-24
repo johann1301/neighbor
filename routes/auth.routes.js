@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const User = require('../models/User.model');
 const bcryptjs = require('bcryptjs');
 const saltRounds = 10;
+const Ad = require('../models/Ad')
 
 
 // middleware to protect a route
@@ -18,12 +19,16 @@ const loginCheck = () => {
   }
 }
 
-router.get('/userProfile', loginCheck(), (req, res) => {
-  const user = req.session.user;
-        console.log (user)
-          res.render('users/user-profile', { user });
 
-})
+router.get('/userProfile', loginCheck(), (req, res) => {
+  Ad.find({owner: req.session.user._id })
+  .then(adFromDB => {
+    res.render('users/user-profile', { ad: adFromDB, user: req.session.user })
+
+  })
+  .catch(err => next(err))
+});
+
 
 // GET login route
  

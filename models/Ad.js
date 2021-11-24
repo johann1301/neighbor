@@ -12,7 +12,11 @@ const adSchema = new Schema({
 		city: String,
 	},
 	description: String,
-	price: Number
+	price: Number,
+	owner: {
+		type: Schema.Types.ObjectId,
+		ref: 'User'
+	}
 }, {
 	timestamps: true,
 });
