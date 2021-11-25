@@ -61,12 +61,13 @@ router.post('/userProfile', (req, res, next) => {
         } else if (bcryptjs.compareSync(password, user.passwordHash)) {
             req.session.user = user;
           
-          res.render('users/user-profile', { user });
+          res.redirect('/userProfile')
         } else {
           res.render('auth/login', { errorMessage: 'Incorrect password.' });
         }
       })
       .catch(error => next(error));
+      
   });
 
 
