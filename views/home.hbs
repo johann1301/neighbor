@@ -6,37 +6,39 @@
 
 <div class="filters">
   <h3>Filters: </h3>
-  <button class="filter-option" data-filter="household" onclick=filterCategory(event)>Household</button>
-  <button class="filter-option" data-filter="garden" onclick=filterCategory(event)>Garden</button>
-  <button class="filter-option" data-filter="pets" onclick=filterCategory(event)>Pets</button>
-  <button class="filter-option" data-filter="education" onclick=filterCategory(event)>Education</button>
-  <button class="filter-option" data-filter="craft" onclick=filterCategory(event)>Craft</button>
-  <button class="filter-option" data-filter="voluntary" onclick=filterCategory(event)>Voluntary</button>
-  <button class="filter-option" data-filter="*" onclick=filterCategory(event)>All</button>
+  <button class="filter-option"><a href="/filter?category=household">Household</a></button>
+  <button class="filter-option"><a href="/filter?category=garden">Garden</a></button>
+  <button class="filter-option "><a href="/filter?category=pets">Pets</a></button>
+
+  <button class="filter-option"><a href="/filter?category=education">Education</a></button>
+  <button class="filter-option"><a href="/filter?category=craft">Craft</a></button>
+  <button class="filter-option"><a href="/filter?category=voluntary">Voluntary</a></button>
+  <button class="filter-option"><a href="/">All</a></button>
 </div>
 
 <div class="search-container">
-        <select class="radius" name="radius" id="radius">
+        {{!-- <select class="radius" name="radius" id="radius">
             <option value="5km">5km</option>
             <option value="10km">10km</option>
             <option value="15km">15km</option>
             <option value="20km">20km</option>
-        </select>
-    <form action="/ads">
-      <input class="search-form" type="text" placeholder="City / Zipcode / Address" name="search">
+        </select> --}}
+    <form action="/search" method="POST">
+      <input class="search-form" type="text" placeholder="Search for City" name="search">
       <button class="submit-btn" type="submit">Search</button>
     </form>
   </div>
 
 {{#each  adList}}
 <a href="/ads/{{_id}}">
-<div class="test">
+<div class="ad-list list table-border">
   <img class ='ad-img' src='images/hammer.png'>
   <p class="bold">{{title}}</p>
   <p>Time: {{time}}h</p>
+  <p>Category: {{category}}</p>
   <p class="bold">Zipcode: {{address.zipcode}}</p>
   <p class="bold">Price: {{price}}</p>
-  <button class="details-btn">Details</button>
+  <p><button class="details-btn">Details</button></p>
 </div>
 </a>
 {{/each}}
