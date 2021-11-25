@@ -5,6 +5,7 @@
 body {
   font-family: 'Lato', sans-serif;
   margin: 0px;
+  height: 80vh;
 }
 
 #logo-link {
@@ -14,12 +15,7 @@ body {
   font-size: 30px;
 }
 
-/* #logo-div{
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  
-} */
+
 
 a{
   text-decoration: none !important;
@@ -33,10 +29,18 @@ a:hover{
 
 }
 
-#logo{
-  /* vertical-align: middle; */
-  height: 30px;
+ #logo{
+  vertical-align: middle;
+  height: 29px;
+  width: 43px !important;
+  margin-top: auto;
+  margin-bottom: auto;
 
+
+} 
+
+.logo-pad{
+  padding: 10px;
 }
 
 header{
@@ -196,13 +200,33 @@ h3{
   padding: 30px;
 }
 
+.details-font{
+  font-size: 20px;
+}
+
+.description-pad{
+  padding-left: 25%;
+  padding-right: 25%;
+  margin: 10px;
+  margin-bottom: 50px;
+}
+
 .details-title{
   font-size: 40px;
   font-weight: bold;
 
 }
 
-.details-address{}
+.details-price{
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.details-img{
+  margin-top: 100px;
+  width: 200px;
+}
+
 .details-row{
   display: flex;
   flex-direction: row;
@@ -238,7 +262,8 @@ th{
 } 
 */
 .ad-img {
-width: 20px;
+width: 50px;
+margin-bottom: 15px;
 } 
 
 
@@ -260,7 +285,7 @@ width: 20px;
 }
 
 .details-btn{
-  margin-bottom: 15px;
+  margin-bottom: 8px;
   border-radius: 15px;
   border: 1px solid #623FFD;
   background-color: rgb(235, 235, 235);
@@ -365,22 +390,23 @@ width: 20px;
   align-items: center;
 }
 
-.logoCenter{
+/* .logoCenter{
   width:100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly; 
   align-items: center;
   padding: 5px;
-}
+} */
 
-.row{
-  width:100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly; 
-  align-items: center;
+.header-row{
+  /* width:100%; */
+  /* display: flex; */
+  /* flex-direction: row;
+  justify-content: space-evenly;  */
+  align-items: center; 
   padding: 5px;
+  margin: 0 auto;
 }
 
 .logout{
@@ -434,7 +460,6 @@ width: 20px;
   border-radius: 10px;
   margin: 10px;
 }
-
 
 
 
@@ -573,7 +598,7 @@ width: 20px;
   text-transform: uppercase;
 }
 
-.authContainer.right-panel-active .sign-in-container {
+.authContainer .right-panel-active .sign-in-container {
   /* transform: translateX(100%); */
 }
 
