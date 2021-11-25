@@ -27,10 +27,21 @@ const loginCheck = () => {
 
   router.post('/userProfile/edit', uploader.single("profileImg"), (req, res, next) => {
 	const user = req.session.user;
-  const imgPath = req.file.path;
-  const imgName = req.file.originalname;
-  const publicId = req.file.filename;
+  let imgPath;
+  let imgName ;
+  let publicId;
+  if(req.file){
+  imgPath = req.file.path;
+  imgName = req.file.originalname;
+  publicId = req.file.filename;
+  } else {
+    imgPath = req.session.user.imgPath;
+    imgName = req.session.imgName;
+    publicId = req.session.publicId;
+  }
   const { street, number, zipcode, city } = req.body
+
+  console.log("Hello", req.file)
 
   // if (req.session.user.publicId !== req.file.filename){
   //   cloudinary.uploader.destroy(publicId)

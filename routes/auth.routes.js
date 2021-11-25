@@ -101,7 +101,8 @@ if (!regex.test(password)) {
         // username: username
         username,
         email,
-        passwordHash: hashedPassword
+        passwordHash: hashedPassword, 
+        imgPath: 'https://res.cloudinary.com/johanneskessel/image/upload/v1637854269/profile-picture-uploads/LogoDefault_vm94mc.png',
       });
     })
     .then(userFromDB => {
