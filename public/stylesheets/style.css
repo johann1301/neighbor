@@ -40,9 +40,9 @@ a:hover{
 }
 
 header{
-  margin: 0px;
-  padding-top: 15px;
-  padding-bottom: 15px;
+  padding-top: 10px;
+  /* padding-top: 15px;
+  padding-bottom: 15px; */
   background-color: #623FFD; 
 }
 
@@ -53,7 +53,7 @@ header{
   text-decoration: none;
   border: 2px solid white;
   border-radius: 15px;
-  padding: 10px;
+  padding: 3px 10px;
   background-color: #623FFD;
   font-size: 16px;
   display: block; 
@@ -256,6 +256,7 @@ width: 20px;
 }
 
 /* userProfile Page */
+
 .flexbox{
   display: flex;
   flex-direction: row;
@@ -294,6 +295,56 @@ width: 20px;
   width: 100px;
   height: 100px;
 
+}
+
+/* layout Profile icon */
+
+.white{
+ color: white;
+ font-size: smaller;
+ font-weight: 1000;
+ 
+}
+
+
+.profilCenter{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.logoCenter{
+  width:100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly; 
+  align-items: center;
+  padding: 5px;
+}
+
+.row{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly; 
+  align-items: center;
+  padding: 5px;
+}
+
+.logout{
+  text-align: center;
+  text-decoration: none;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 0px 5px;
+  background-color: #623FFD;
+  font-size: 10px;
+  display: block; 
+  margin: 0 auto;
+  margin-bottom: auto;
+  color: white !important;
+  font-weight: 1000;
 }
 
 /* create ad Page / editForm */

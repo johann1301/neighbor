@@ -2,6 +2,18 @@ const router = require("express").Router();
 const { addListener } = require("../app");
 const Ad = require('../models/Ad')
 
+// middleware to protect a route
+const loginCheck = () => {
+	return (req, res, next) => {
+	  // check for a logged in user
+	  if (req.session.user) {
+		next()
+	  } else {
+		res.redirect('/login')
+	  }
+	}
+  }
+
 // List all ads
 
 router.get('/', (req, res, next) => {
@@ -9,15 +21,15 @@ router.get('/', (req, res, next) => {
 	Ad.find()
 		.then(adsFromDB => {
 			
-			res.render('home', { adList: adsFromDB })
+			res.render('home', { adList: adsFromDB, user: req.session.user })
 		})
 		.catch(err => next(err))
 }); 
 
 // Create new Ad
 
-router.get('/ads/add', (req, res, next) => {
-	res.render('ads/addForm')
+router.get('/ads/add', loginCheck(), (req, res, next) => {
+	res.render('ads/addForm', {user: req.session.user})
 });
 
 router.post('/ads', (req, res, next) => {
@@ -49,22 +61,22 @@ router.post('/ads', (req, res, next) => {
 
 // Display Ad
 
-router.get('/ads/:id', (req, res, next) => {
+router.get('/ads/:id', loginCheck(), (req, res, next) => {
 	const id = req.params.id
 	Ad.findById(id)
 		.then(adFromDB => {
-			res.render('ads/details', { ad: adFromDB })
+			res.render('ads/details', { ad: adFromDB, user: req.session.user })
 		})
 		.catch(err => next(err))
 });
 
 // Edit Ad
 
-router.get('/ads/edit/:id', (req, res, next) => {
+router.get('/ads/edit/:id', loginCheck(), (req, res, next) => {
 	const id = req.params.id
 	Ad.findById(id)
 		.then(adFromDB => {
-			res.render('ads/editForm', { ad: adFromDB })
+			res.render('ads/editForm', { ad: adFromDB, user: req.session.user })
 		})
 		.catch(err => next(err))
 });
@@ -96,7 +108,7 @@ router.post('/ads/edit/:id', (req, res, next) => {
 
 // Delete Ad
 
-router.get('/ads/delete/:id', (req, res, next) => {
+router.get('/ads/delete/:id', loginCheck(), (req, res, next) => {
 	const id = req.params.id
 	Ad.findByIdAndDelete(id)
 		.then(() => {
