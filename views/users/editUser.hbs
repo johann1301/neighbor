@@ -1,7 +1,13 @@
-{{#with user}}
-<h1>Hello {{username}}</h1>
 
+{{#with user}}
+
+<div class = "alignEdit">
+<h1>Hello {{username}}</h1>
+<br>
+<div class = "editBorder">
 <form action="/userProfile/edit" method="POST" enctype='multipart/form-data'>
+
+  <div class = 'createAdForm'>
 
     <img src={{imgPath}} alt="Profile Picture" height="100px">
 
@@ -9,20 +15,25 @@
 
 	<label for="profileImg">Profile image: </label>
 	<input type="file" name="profileImg" id="profileImg">
+	<br>
 
-    <label for="street">Street: </label>
-	<input type="text" name="street" id="street" value="{{address.street}}">
-
-    <label for="number">Number: </label>
-	<input type="number" name="number" id="number" value="{{address.number}}">
-
-    <label for="zipcode">Zipcode: </label>
-	<input type="number" name="zipcode" id="zipcode" value="{{address.zipcode}}">
-
-    <label for="city">City: </label>
-	<input type="text" name="city" id="city" value="{{address.city}}">
-
+    <label for="date">Address: </label>
+<div class= 'adAddress'>
 	
-	<button type="submit">Edit my Profile</button>
+	<input class = 'createAd' type="text" name="street" id="street" placeholder="Street" value="{{address.street}}">
+
+	<input class = 'createAdNum' type="number" name="number" id="number" placeholder="Number" value="{{address.number}}">
+</div>
+<div class= 'adAddress'>
+	<input class = 'createAdNum' type="number" name="zipcode" id="zipcode" placeholder="Zipcode" value="{{address.zipcode}}">
+
+	<input class = 'createAd' type="text" name="city" id="city" placeholder="City" value="{{address.city}}">
+</div>
+	<br>
+	<button class="details-btn" type="submit">Edit my Profile</button>
+
+	</div>
 </form>
+</div>
+</div>
 {{/with}}

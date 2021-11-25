@@ -342,6 +342,21 @@ width: 20px;
  
 }
 
+.editBorder{
+  border-radius: 100px;
+  width: 50%;
+  border: 2px solid #623FFD;
+  padding: 10px;
+  
+}
+
+.alignEdit{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 
 .profilCenter{
   display: flex;
@@ -421,7 +436,7 @@ width: 20px;
 }
 
 
-}
+
 
 /* SIGN-IN SIGN-UP form */
 

@@ -2,6 +2,7 @@
 
   <div class = "profil">
     {{#with user}}
+      
       <img class = "profileImg" src={{imgPath}} alt="Profile Picture" >
       <h4 class="bold">{{ username }}</h4>
       <p>{{email}}</p>
@@ -18,11 +19,11 @@
     {{#each  ad}}
       <a href="/ads/{{_id}}">
       <div class="testUser">
-      <img class ='ad-img' src='/public/images/hammer.png'>
+      <img class ='ad-img' src='/images/hammer.png'>
       <p class="bold">{{title}}</p>
       <p>Time: {{time}}h</p>
-      <p class="bold">Zipcode: {{address.zipcode}}</p>
-      <p class="bold">Price: {{price}}€</p>
+      <p class="bold">Zipcode: {{address.city}}</p>
+      <p class="bold">Salary: {{price}}€/h</p>
       <button class="details-btn">Details</button>
       </div>
       </a>
