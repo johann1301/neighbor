@@ -5,6 +5,7 @@
 body {
   font-family: 'Lato', sans-serif;
   margin: 0px;
+  height: 80vh;
 }
 
 #logo-link {
@@ -439,9 +440,6 @@ margin-bottom: 15px;
   width: 15%;
   border-radius: 10px;
   margin: 10px;
-}
-
-
 }
 
 /* SIGN-IN SIGN-UP form */
