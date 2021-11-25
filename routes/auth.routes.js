@@ -35,15 +35,16 @@ router.get('/userProfile', loginCheck(), (req, res) => {
 // GET route ==> to display the login form to users
 router.get('/login', (req, res) => res.render('auth/login'));
 
+// removed /signup route
 // GET route ==> to display the signup form to users
-router.get('/signup', (req, res) => res.render('auth/signup'));
+// router.get('/signup', (req, res) => res.render('auth/signup'));
 
 
 
 // POST login route
 
 // POST login route ==> to process form data
-router.post('/userProfile', (req, res, next) => {
+router.post('/login', (req, res, next) => {
     const { email, password } = req.body;
    
     if (email === '' || password === '') {
@@ -81,13 +82,13 @@ const regex = /.{6,}/;
 if (!regex.test(password)) {
   res
     .status(500)
-    .render('auth/signup', { errorMessage: 'Password needs to have at least 6 characters.' });
+    .render('auth/login', { errorMessage: 'Password needs to have at least 6 characters.' });
   return;
 }
 
   // make sure users fill all mandatory fields:
   if (!username || !email || !password) {
-    res.render('auth/signup', { errorMessage: 'All fields are mandatory. Please provide your username, email and password.' });
+    res.render('auth/login', { errorMessage: 'All fields are mandatory. Please provide your username, email and password.' });
     return;
   }
  
@@ -110,9 +111,9 @@ if (!regex.test(password)) {
     })
     .catch(error => {
       if (error instanceof mongoose.Error.ValidationError) {
-        res.status(500).render('auth/signup', { errorMessage: error.message });
+        res.status(500).render('auth/login', { errorMessage: error.message });
       } else if (error.code === 11000) {
-        res.status(500).render('auth/signup', {
+        res.status(500).render('auth/login', {
            errorMessage: 'Username and email need to be unique. Either username or email is already used.'
         });
       } else {
