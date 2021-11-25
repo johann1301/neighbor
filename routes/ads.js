@@ -88,7 +88,6 @@ router.post('/ads/edit/:id', (req, res, next) => {
 	  price,
 	}, { new: true })
 		.then(updatedAd => {
-			console.log(updatedAd)
 			
 			res.redirect(`/ads/${updatedAd._id}`)
 		})
