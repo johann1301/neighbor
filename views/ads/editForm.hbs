@@ -2,10 +2,11 @@
 {{#with ad}}
 <form action="/ads/edit/{{_id}}" method="POST">
 
-	<label for="title">Title: </label>
-	<input type="text" name="title" id="title" value="{{title}}">
+	<div class = 'createAdForm'>
 
-    <select name="category" >
+	<input class = 'createAd' type="text" name="title" id="title" placeholder="Title" value="{{title}}">
+
+    <select class = 'createAd' name="category">
 		
             <option value="">-Category-</option>
 			<option value="household">Household</option>
@@ -18,30 +19,30 @@
 		
 	</select>
 
-    <label for="time">Time: </label>
-	<input type="number" name="time" id="time" value="{{time}}">
+	<input class = 'createAd' type="number" name="time" id="time" placeholder="Time" value="{{time}}">
 
 	<label for="date">Date: </label>
-	<input type="date" name="date" id="date" value="{{date}}">
+	<input class = 'createAd' type="date" name="date" id="date" value="{{date}}">
 
-    <label for="street">Street: </label>
-	<input type="text" name="street" id="street" value="{{address.street}}">
+    <label for="date">Address: </label>
+<div class= 'adAddress'>
+	
+	<input class = 'createAd' type="text" name="street" id="street" placeholder="Street" value="{{address.street}}">
 
-    <label for="number">Number: </label>
-	<input type="number" name="number" id="number" value="{{address.number}}">
+	<input class = 'createAdNum' type="number" name="number" id="number" placeholder="Number" value="{{address.number}}">
+</div>
+<div class= 'adAddress'>
+	<input class = 'createAdNum' type="number" name="zipcode" id="zipcode" placeholder="Zipcode" value="{{address.zipcode}}">
 
-    <label for="zipcode">Zipcode: </label>
-	<input type="number" name="zipcode" id="zipcode" value="{{address.zipcode}}">
+	<input class = 'createAd' type="text" name="city" id="city" placeholder="City" value="{{address.city}}">
+</div>
+	<textarea class = 'adDescription' type="text" name="description" id="description" placeholder="Description" rows="10" cols="50">{{description}}</textarea>
 
-    <label for="city">City: </label>
-	<input type="text" name="city" id="city" value="{{address.city}}">
 
-	<label for="description">Description: </label>
-	<input type="text" name="description" id="description" value="{{description}}">
+	<input class = 'adPrice' type="number" name="price" id="price" placeholder="Price per hour" value="{{price}}">
 
-	<label for="price">Price: </label>
-	<input type="number" name="price" id="price" value="{{price}}">
+	<button class="details-btn" type="submit">Edit this ad</button>
+</div>
 
-	<button type="submit">Edit this ad</button>
 </form>
 {{/with}}

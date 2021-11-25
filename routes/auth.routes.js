@@ -62,12 +62,13 @@ router.post('/login', (req, res, next) => {
         } else if (bcryptjs.compareSync(password, user.passwordHash)) {
             req.session.user = user;
           
-          res.render('users/user-profile', { user });
+          res.redirect('/userProfile')
         } else {
           res.render('auth/login', { errorMessage: 'Incorrect password.' });
         }
       })
       .catch(error => next(error));
+      
   });
 
 
@@ -122,7 +123,7 @@ if (!regex.test(password)) {
 });
 
 // Logout route
-router.post('/logout', (req, res, next) => {
+router.get('/logout', (req, res, next) => {
     req.session.destroy(err => {
       if (err) next(err);
       res.redirect('/');

@@ -1,10 +1,11 @@
 <h1>Create a new ad</h1>
 <form action="/ads" method="POST">
 
-	<label for="title">Title: </label>
-	<input type="text" name="title" id="title">
+<div class = 'createAdForm'>
 
-    <select name="category">
+	<input class = 'createAd' type="text" name="title" id="title" placeholder="Title">
+
+    <select class = 'createAd' name="category">
 		
             <option value="">-Category-</option>
 			<option value="household">Household</option>
@@ -17,29 +18,28 @@
 		
 	</select>
 
-    <label for="time">Time: </label>
-	<input type="number" name="time" id="time">
+	<input class = 'createAd' type="number" name="time" id="time" placeholder="Time">
 
 	<label for="date">Date: </label>
-	<input type="date" name="date" id="date">
+	<input class = 'createAd' type="date" name="date" id="date" >
 
-    <label for="street">Street: </label>
-	<input type="text" name="street" id="street">
+    <label for="date">Address: </label>
+<div class= 'adAddress'>
+	
+	<input class = 'createAd' type="text" name="street" id="street" placeholder="Street">
 
-    <label for="number">Number: </label>
-	<input type="number" name="number" id="number">
+	<input class = 'createAdNum' type="number" name="number" id="number" placeholder="Number">
+</div>
+<div class= 'adAddress'>
+	<input class = 'createAdNum' type="number" name="zipcode" id="zipcode" placeholder="Zipcode">
 
-    <label for="zipcode">Zipcode: </label>
-	<input type="number" name="zipcode" id="zipcode">
+	<input class = 'createAd' type="text" name="city" id="city" placeholder="City">
+</div>
+	<textarea class = 'adDescription' type="text" name="description" id="description" placeholder="Description" rows="10" cols="50"></textarea>
 
-    <label for="city">City: </label>
-	<input type="text" name="city" id="city">
 
-	<label for="description">Description: </label>
-	<input type="text" name="description" id="description">
+	<input class = 'adPrice' type="number" name="price" id="price" placeholder="Price per hour">
 
-	<label for="price">Price: </label>
-	<input type="number" name="price" id="price">
-
-	<button type="submit">Create this ad</button>
+	<button class="details-btn" type="submit">Create this ad</button>
+</div>
 </form>

@@ -21,19 +21,61 @@
       
       <div class="container">
         <div class="row">
-          <div class="col ">
-              <a href="/" id="logo-link"><img id="logo" src="images/logo.png"> Bell</a>
+
+
+          <div class="col-2 ">
+            <div class = "logoCenter">
+              <a  href="/" id="logo-link">
+              <div >
+              <img id="logo" src="images/logo.png">
+              <p>Bell</p> 
+              </div>
+              </a>
+            </div>
+              
           </div>
-          <div class="col-6">
+
+
+          
+          <div class="col-8" >
+            <div class = "logoCenter">
+            <button  id="create-button">
+              <a  href="/ads/add" id="create-btn-font">create +</a>
+            </button>
+
+      
+          </div>
+          </div>
+
+          <div class="col-2" >
+
+            {{#if user}}
+            {{#with user}}
+            <div class = "profilCenter">
+            <a  href="/userProfile" id="user">
+            <div class = "profilCenter">
+            <img class = "profileImgSmall" src="{{imgPath}}" alt="Profile Picture" height="30px" width="30px">
+            <p class = "white">{{username}}</p>
+            
+            </div>
+            </a>
+            <a class ="logout" href="/logout" >logout</a>
+            
+            </div>
+            {{/with}}
+             {{else}}
             <button id="create-button">
-              <a href="/ads/add" id="create-btn-font">create +</a>
-            </button>          
-          </div>
-          <div class="col-sm">
+              <a href="/login" id="create-btn-font">login</a>
+            </button> 
+            {{/if}}  
+           
+           
+
           </div>
         </div>
       </div>
-
+               
+            
 
       
     </header>
