@@ -26,6 +26,34 @@ router.get('/', (req, res, next) => {
 		.catch(err => next(err))
 }); 
 
+// Filter ads by category
+
+router.get('/filter', (req, res, next) => {
+	let activeCategory = req.query.category
+	Ad.find({category: activeCategory})
+		.then(adsFromDB => {
+			
+			res.render('home', { adList: adsFromDB, category:activeCategory})
+		})
+		.catch(err => next(err))
+}); 
+
+// Search ads by city 
+
+router.post('/search', (req, res, next) => {
+	let searchText = req.body.search
+	if (searchText == ""){res.redirect("/")}
+	Ad.find({'address.city': searchText})
+		.then(adsFromDB => {
+			
+			res.render('home', { adList: adsFromDB, search:searchText})
+		})
+		.catch(err => next(err))
+	
+}); 
+
+
+
 // Create new Ad
 
 router.get('/ads/add', loginCheck(), (req, res, next) => {

@@ -1,15 +1,21 @@
 {{#with ad}}
 <div class="details">
-	<h1>{{title}}</h1>
-    <p>Category: {{category}}</p>
-	<p>Time: {{time}}h</p>
-    <p>Date: {{date}}</p>
-    <h5>Address:</h5>
-    <p>{{address.street}} {{address.number}}</p>
-    <p>{{address.zipcode}} {{address.city}}</p>
-	<p>Description: {{description}}</p>
-	<p>Price: {{price}}</p>
-	<a href="/ads/edit/{{_id}}">Edit this ad</a>
-	<a href="/ads/delete/{{_id}}">Delete this ad</a>
+	<h1 class="details-title">{{title}}</h1>
+	<div class="details-row">
+		<div class="details-pad">Category: {{category}}</div>
+		<div class="details-pad">Time: {{time}}h</div>
+    	<div class="details-pad">Date: {{date}}</div>
+	</div>
+	<div class="details-row">
+		<div class="details-pad">Address:</div>
+    	<div class="details-pad">{{address.street}} {{address.number}}</div>
+    	<div class="details-pad">{{address.zipcode}} {{address.city}}</div>
+	</div>
+	<p class="details-price">Price: {{price}}€</p>
+	<p>Description:</p>
+	<p>{{description}}</p>
+	
+	<button class="submit-btn"><a href="/ads/edit/{{_id}}">Edit this ad</a></button>
+	<button class="submit-btn"><a href="/ads/delete/{{_id}}">Delete this ad</a></button>
 </div>
 {{/with}}
