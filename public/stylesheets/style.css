@@ -4,7 +4,7 @@
 
 body {
   font-family: 'Lato', sans-serif;
-
+  margin: 0;
 }
 
 #logo-link {
@@ -218,7 +218,7 @@ body {
 	flex-direction: column;
 	font-family: 'Lato', sans-serif;
 	height: 100vh;
-	margin: -20px 0 50px;
+	/* margin: 0px 0 50px; */
 }
 
 h1 {
