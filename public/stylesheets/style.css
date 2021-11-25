@@ -14,12 +14,7 @@ body {
   font-size: 30px;
 }
 
-/* #logo-div{
-  display: flex;
-  flex-direction: row;
-  justify-content: left;
-  
-} */
+
 
 a{
   text-decoration: none !important;
@@ -33,10 +28,18 @@ a:hover{
 
 }
 
-#logo{
-  /* vertical-align: middle; */
-  height: 30px;
+ #logo{
+  vertical-align: middle;
+  height: 29px;
+  width: 43px !important;
+  margin-top: auto;
+  margin-bottom: auto;
 
+
+} 
+
+.logo-pad{
+  padding: 10px;
 }
 
 header{
@@ -371,22 +374,23 @@ margin-bottom: 15px;
   align-items: center;
 }
 
-.logoCenter{
+/* .logoCenter{
   width:100%;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly; 
   align-items: center;
   padding: 5px;
-}
+} */
 
-.row{
-  width:100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly; 
-  align-items: center;
+.header-row{
+  /* width:100%; */
+  /* display: flex; */
+  /* flex-direction: row;
+  justify-content: space-evenly;  */
+  align-items: center; 
   padding: 5px;
+  margin: 0 auto;
 }
 
 .logout{
@@ -441,8 +445,6 @@ margin-bottom: 15px;
   margin: 10px;
 }
 
-
-}
 
 /* SIGN-IN SIGN-UP form */
 
@@ -579,7 +581,7 @@ margin-bottom: 15px;
   text-transform: uppercase;
 }
 
-.authContainer.right-panel-active .sign-in-container {
+.authContainer .right-panel-active .sign-in-container {
   /* transform: translateX(100%); */
 }
 
