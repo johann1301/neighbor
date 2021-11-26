@@ -33,7 +33,7 @@ router.get('/filter', (req, res, next) => {
 	Ad.find({category: activeCategory})
 		.then(adsFromDB => {
 			
-			res.render('home', { adList: adsFromDB, category:activeCategory})
+			res.render('home', { adList: adsFromDB, category:activeCategory, user: req.session.user})
 		})
 		.catch(err => next(err))
 }); 
@@ -46,7 +46,7 @@ router.post('/search', (req, res, next) => {
 	Ad.find({'address.city': searchText})
 		.then(adsFromDB => {
 			
-			res.render('home', { adList: adsFromDB, search:searchText})
+			res.render('home', { adList: adsFromDB, search:searchText, user: req.session.user})
 		})
 		.catch(err => next(err))
 	
